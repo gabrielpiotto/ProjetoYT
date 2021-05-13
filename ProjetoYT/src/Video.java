@@ -3,7 +3,7 @@ public class Video implements AcoesVideo {
 
     // Atributos:
     private String titulo;
-    private double avaliacao;
+    private int avaliacao;
     private int views;
     private int likes;
     private int deslikes;
@@ -11,52 +11,21 @@ public class Video implements AcoesVideo {
 
     // Métodos:
     // Construtor:
-    public void Video(String titulo) {
-        setTitulo(titulo);
-        setAvaliacao(0);
-        setViews(0);
-        setLikes(0);
-        setDeslikes(0);
-        setReproduzindo(false);
-    }
-
-    public String getStatus() {
-        return "\n titulo: " + titulo + "\n avaliacao: " + avaliacao + "\n views: " + views 
-                + "\n likes: " + likes + "\n deslikes: " + deslikes + "\n reproduzindo: " + reproduzindo;
-    }
-    
-
-    @Override
-    public void play() {
-        if (!isReproduzindo()) { // Se NÃO estiver reproduzindo
-            setReproduzindo(true); // reproduzir
-            System.out.println("Reproduzindo..");
-        } else { // Senão
-            pause(); // pausar video
-        }
-    }
-
-    @Override
-    public void pause() {
-        if (isReproduzindo()) { // Se estiver reproduzindo
-            setReproduzindo(false); // Pausar
-            System.out.println("Pausado..");
-        } else { //senão
-            play(); // Reproduzir
-        }
-    }
-
-    @Override
-    public void like() {
-        setLikes(getLikes() + 1);
-    }
-
-    @Override
-    public void deslike() {
-        setDeslikes(getDeslikes() + 1);
+    public Video(String titulo) {
+        this.titulo = titulo;
+        this.avaliacao = 1;
+        this.views = 0;
+        this.likes = 0;
+        this.deslikes = 0;
+        this.reproduzindo = false;
     }
 
     // Getters e Setters:
+    public String getStatus() {
+        return "\n titulo: " + titulo + "\n avaliacao: " + avaliacao + "\n views: " + views
+                + "\n likes: " + likes + "\n deslikes: " + deslikes + "\n reproduzindo: " + reproduzindo;
+    }
+
     public String getTitulo() {
         return this.titulo;
     }
@@ -69,7 +38,7 @@ public class Video implements AcoesVideo {
         return this.avaliacao;
     }
 
-    public void setAvaliacao(double avaliacao) {
+    public void setAvaliacao(int avaliacao) {
         this.avaliacao = avaliacao;
     }
 
@@ -103,5 +72,36 @@ public class Video implements AcoesVideo {
 
     public void setReproduzindo(boolean reproduzindo) {
         this.reproduzindo = reproduzindo;
+    }
+    
+    // Outros Métodos:
+    @Override
+    public void play() {
+        if (!isReproduzindo()) { // Se NÃO estiver reproduzindo
+            setReproduzindo(true); // reproduzir
+            System.out.println("Reproduzindo..");
+        } else { // Senão
+            pause(); // pausar video
+        }
+    }
+
+    @Override
+    public void pause() {
+        if (isReproduzindo()) { // Se estiver reproduzindo
+            setReproduzindo(false); // Pausar
+            System.out.println("Pausado..");
+        } else { //senão
+            play(); // Reproduzir
+        }
+    }
+
+    @Override
+    public void like() {
+        setLikes(getLikes() + 1);
+    }
+
+    @Override
+    public void deslike() {
+        setDeslikes(getDeslikes() + 1);
     }
 }

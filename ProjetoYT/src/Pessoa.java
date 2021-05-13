@@ -1,5 +1,5 @@
 
-public class Pessoa {
+public abstract class Pessoa {
 
     // Atributos da classe:
     protected String nome;
@@ -9,13 +9,6 @@ public class Pessoa {
 
     // Métodos:
     /**
-     * Adicionar experiencia
-     */
-    public void ganharExp() {
-
-    }
-
-    /**
      * Método construtor 'Pessoa com experiencia'
      *
      * @param nome
@@ -23,11 +16,11 @@ public class Pessoa {
      * @param sexo 'M' ou 'F'
      * @param experiencia experiencia atual da pessoa
      */
-    public void Pessoa(String nome, int idade, String sexo, int experiencia) {
-        setNome(nome);
-        setIdade(idade);
-        setSexo(sexo);
-        setExperiencia(experiencia);
+    public Pessoa(String nome, int idade, String sexo, int experiencia) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+        this.experiencia = experiencia;
     }
 
     /**
@@ -37,11 +30,11 @@ public class Pessoa {
      * @param idade
      * @param sexo 'M' ou 'F'
      */
-    public void Pessoa(String nome, int idade, String sexo) {
-        setNome(nome);
-        setIdade(idade);
-        setSexo(sexo);
-        setExperiencia(0);
+    public Pessoa(String nome, int idade, String sexo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+        this.experiencia = 0;
     }
 
     // Getters e Setters:
@@ -75,5 +68,12 @@ public class Pessoa {
 
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
+    }
+
+    /**
+     * Adicionar experiencia
+     */
+    public void ganharExp() {
+        setExperiencia(getExperiencia() + 1);
     }
 }

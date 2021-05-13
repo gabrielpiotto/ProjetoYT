@@ -1,6 +1,7 @@
 
 public interface AcoesVideo {
 
+    // Métodos abstratos:
     public void play();
 
     public void pause();
