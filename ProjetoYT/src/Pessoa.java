@@ -16,10 +16,32 @@ public class Pessoa {
     }
 
     /**
-     * Construtor
+     * Método construtor 'Pessoa com experiencia'
+     *
+     * @param nome
+     * @param idade
+     * @param sexo 'M' ou 'F'
+     * @param experiencia experiencia atual da pessoa
      */
-    public void Pessoa() {
+    public void Pessoa(String nome, int idade, String sexo, int experiencia) {
+        setNome(nome);
+        setIdade(idade);
+        setSexo(sexo);
+        setExperiencia(experiencia);
+    }
 
+    /**
+     * Método contrutor 'Pessoa Iniciante'
+     *
+     * @param nome
+     * @param idade
+     * @param sexo 'M' ou 'F'
+     */
+    public void Pessoa(String nome, int idade, String sexo) {
+        setNome(nome);
+        setIdade(idade);
+        setSexo(sexo);
+        setExperiencia(0);
     }
 
     // Getters e Setters:
