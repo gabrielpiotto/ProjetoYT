@@ -21,7 +21,7 @@ public class Video implements AcoesVideo {
     }
 
     // Getters e Setters:
-    public String getStatus() {
+    public String toString() {
         return "\n titulo: " + titulo + "\n avaliacao: " + avaliacao + "\n views: " + views
                 + "\n likes: " + likes + "\n deslikes: " + deslikes + "\n reproduzindo: " + reproduzindo;
     }
@@ -38,8 +38,8 @@ public class Video implements AcoesVideo {
         return this.avaliacao;
     }
 
-    public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setAvaliacao() {
+        this.avaliacao = (getLikes() + getDeslikes()) /this.views;
     }
 
     public int getViews() {

@@ -76,4 +76,10 @@ public abstract class Pessoa {
     public void ganharExp() {
         setExperiencia(getExperiencia() + 1);
     }
+
+    @Override
+    public String toString() {
+        return "\nnome: " + nome + "\n sexo: " + sexo + "\n idade: " + idade + "\n experiencia: " + experiencia;
+    }
+
 }
